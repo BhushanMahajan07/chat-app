@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Bunny's Chat App</h1>
+    <input type="text" id="username-input" placeholder="Enter your username">
+    <input type="text" id="room-input" placeholder="Enter room number">
+    <button id="join-button">Join Room</button>
+  </div>
+
+  <script>
+    document.getElementById('join-button').addEventListener('click', () => {
+      const username = document.getElementById('username-input').value.trim();
+      const room = document.getElementById('room-input').value.trim();
+
+      if (username && room) {
+        localStorage.setItem('username', username);
+        localStorage.setItem('room', room);
+        window.location.href = '/chat';
+      }
+    });
+  </script>
+</body>
+</html>
